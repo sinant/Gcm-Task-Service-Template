@@ -8,7 +8,7 @@ protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
     if (savedInstanceState != null)
-    startTaskService();
+        startTaskService();
 }
 
 @Override
@@ -17,7 +17,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         case REQUEST_GOOGLE_PLAY_SERVICES:
         if (resultCode == Activity.RESULT_OK) {
             Intent i = new Intent(this, TaskService.class);
-            startService(i); // OK, init GCM
+            startService(i);
         }
         break;
         default:
@@ -58,7 +58,7 @@ Repeating task will fire every 60 seconds.
 ```java
 TaskService.cancelRepeat(context);
 ```
-### Canceling All Active Tasks
+## Canceling All Active Tasks
 ```java
 TaskService.cancelRepeat(context);
 ```
